@@ -4,7 +4,7 @@ import 'package:hostel_management/Login.dart';
 import 'package:hostel_management/Profile.dart';
 import 'package:hostel_management/Ragister.dart';
 import 'package:hostel_management/Room.dart';
-import 'package:hostel_management/movie.dart';
+
 
 void main() {
   runApp(const MyApp());
