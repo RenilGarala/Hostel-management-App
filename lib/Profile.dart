@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hostel_management/Home.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  // Define the user information as state variables
+  String username = 'John Doe';
+  String email = 'johndoe@example.com';
+  String phoneNumber = '+91 9876543210';
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +47,9 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 20),
 
             _buildHeader("User Information"),
-            _buildInfoTile(context, 'Username', 'John Doe', Icons.person),
-            _buildInfoTile(context, 'Email', 'johndoe@example.com', Icons.email),
-            _buildInfoTile(context, 'Phone Number', '+91 9876543210', Icons.phone),
+            _buildInfoTile(context, 'Username', username, Icons.person),
+            _buildInfoTile(context, 'Email', email, Icons.email),
+            _buildInfoTile(context, 'Phone Number', phoneNumber, Icons.phone),
             const SizedBox(height: 20),
             const Divider(thickness: 2),
             const SizedBox(height: 20),
@@ -99,13 +109,26 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  void _navigateToEditScreen(BuildContext context, String fieldName, String currentValue) {
-    Navigator.push(
+  void _navigateToEditScreen(BuildContext context, String fieldName, String currentValue) async {
+    final result = await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => EditFieldScreen(fieldName: fieldName, currentValue: currentValue),
       ),
     );
+
+    // Check if result is not null and update the appropriate field
+    if (result != null && result is String) {
+      setState(() {
+        if (fieldName == 'Username') {
+          username = result;
+        } else if (fieldName == 'Email') {
+          email = result;
+        } else if (fieldName == 'Phone Number') {
+          phoneNumber = result;
+        }
+      });
+    }
   }
 }
 
@@ -166,7 +189,7 @@ class _EditFieldScreenState extends State<EditFieldScreen> {
   Widget _buildSaveButton() {
     return ElevatedButton(
       onPressed: () {
-        Navigator.pop(context, _controller.text);
+        Navigator.pop(context, _controller.text); // Return the updated value
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.blue[700],

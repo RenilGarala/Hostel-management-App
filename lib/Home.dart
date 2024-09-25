@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hostel_management/Canteen.dart';
+import 'package:hostel_management/Complain.dart';
 import 'package:hostel_management/Login.dart';
 import 'package:hostel_management/Loundry.dart';
 import 'package:hostel_management/Profile.dart';
@@ -87,6 +88,18 @@ class _HomepageState extends State<Homepage> {
                   context,
                   MaterialPageRoute(
                       builder: (context) =>  CanteenPage()),
+                );
+              },
+            ),
+             ListTile(
+              leading: const Icon(Icons.feedback),
+              title: const Text('Complain'),
+             
+               onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>  ComplaintPage()),
                 );
               },
             ),
