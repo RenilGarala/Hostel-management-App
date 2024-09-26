@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hostel_management/Home.dart';
 import 'package:hostel_management/Login.dart';
 import 'package:hostel_management/Profile.dart';
-import 'package:hostel_management/Ragister.dart';
 import 'package:hostel_management/Room.dart';
 
 
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: Homepage(),
+      home: Login(),
     );
   }
 }

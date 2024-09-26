@@ -89,7 +89,7 @@ class _ComplaintPageState extends State<ComplaintPage> {
               controller: descriptionController,
               maxLines: 3,
               decoration: const InputDecoration(
-                labelText: 'Complaint Description',
+                labelText: 'Complain Description',
                 border: OutlineInputBorder(),
                 filled: true,
 
@@ -109,7 +109,7 @@ class _ComplaintPageState extends State<ComplaintPage> {
                 padding: const EdgeInsets.symmetric(vertical: 15),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               ),
-              child: const Text('Submit Complaint', style: TextStyle(fontSize: 16)),
+              child: const Text('Submit Complaint', style: TextStyle(fontSize: 16, color: Colors.white)),
             ),
           ],
         ),

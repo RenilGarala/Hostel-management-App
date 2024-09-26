@@ -10,9 +10,9 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   // Define the user information as state variables
-  String username = 'John Doe';
-  String email = 'johndoe@example.com';
-  String phoneNumber = '+91 9876543210';
+  String username = 'Renil Garala';
+  String email = 'renil2004@gmail.com';
+  String phoneNumber = '+91 9870291911';
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +54,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const Divider(thickness: 2),
             const SizedBox(height: 20),
             _buildHeader("More Information"),
-            _buildStaticInfo('Address', '123 Main St, City, State'),
-            _buildStaticInfo('College Name', 'XYZ University'),
-            _buildStaticInfo('Course Name', 'Bachelor of Engineering'),
+            _buildStaticInfo('Address', 'Morbi Main Road, Rajkot, Gujarat'),
+            _buildStaticInfo('College Name', 'Darshan University'),
+            _buildStaticInfo('Course Name', 'Bachelor of Computer Application'),
           ],
         ),
       ),
